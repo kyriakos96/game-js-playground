@@ -40,6 +40,7 @@ window.addEventListener("load", function () {
       this.y = y;
       this.speed = 3;
       this.markedForDeletion = false;
+      this.image = document.getElementById("projectile");
     }
 
     update() {
@@ -47,8 +48,7 @@ window.addEventListener("load", function () {
       if (this.x > this.game.width * 0.8) this.markedForDeletion = true;
     }
     draw(context) {
-      context.fillStyle = "yellow";
-      context.fillRect(this.x, this.y, this.width, this.height);
+      context.drawImage(this.image, this.x, this.y);
     }
   }
 
